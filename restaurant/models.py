@@ -17,7 +17,9 @@ class Menu(models.Model):
 
     class Meta:
         constraints = [
-            models.UniqueConstraint(fields=["date", "restaurant"], name="unique_menus")
+            models.UniqueConstraint(
+                fields=["date", "restaurant"], name="unique_menus"
+            )
         ]
 
     def __str__(self):
