@@ -15,6 +15,11 @@ class Menu(models.Model):
         Restaurant, on_delete=models.CASCADE, related_name="menus"
     )
 
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=["date", "restaurant"], name="unique_menus")
+        ]
+
     def __str__(self):
         return f"{self.date} - {self.restaurant}"
 
