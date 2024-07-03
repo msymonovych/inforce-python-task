@@ -41,7 +41,7 @@ class MenuItem(models.Model):
 class Vote(models.Model):
     score = models.IntegerField(default=0)
     menu = models.ForeignKey(
-        Menu, on_delete=models.CASCADE, related_name="score"
+        Menu, on_delete=models.CASCADE, related_name="votes"
     )
     employee = models.ForeignKey(
         settings.AUTH_USER_MODEL,
